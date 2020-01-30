@@ -1,0 +1,22 @@
+/// !!! READ ME !!!
+/// Notes here about how and why to use this new SCSS system.
+/// @link http://sassdoc.com/annotations/
+
+@import 'functions/color';
+
+@import 'mixins/viewport';
+
+@include root-variables;
+
+
+body {
+    color: Color\Tint(red, 50);
+}
+
+@include Viewport\Min(300px) {
+
+    body {
+        color: Color\Tint(blue, 50);
+    }
+
+}

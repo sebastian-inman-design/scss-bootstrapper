@@ -1,0 +1,98 @@
+////
+/// @group Color
+/// @author Sebastian Inman
+////
+
+
+
+/// @name   Color\RGB
+/// @since  01.29.2020
+/// @param  {Color} $color
+/// @return {Color} Returns the provided color in RGB format.
+
+@function Color\RGB($color) {
+
+    @return Color\RGBA($color, 1);
+
+}
+
+
+
+/// @name   Color\RGBA
+/// @since  01.29.2020
+/// @param  {Color}  $color
+/// @param  {Number} $alpha 
+/// @return {Color}  Returns the provided color in RGBA format.
+
+@function Color\RGBA($color, $alpha: 1) {
+
+    @if $alpha > 1 or $alpha < 0 {
+
+        @error 'The alpha $amount: `#{$amount}` must be between 0 and 1';
+
+    }
+
+    @return rgba($color, $alpha);
+
+}
+
+
+
+/// @name   Color\Tint
+/// @since  01.29.2020
+/// @param  {Color}  $color
+/// @param  {Number} $amount
+/// @return {Color}  Applies a white tint to the provided color.
+
+@function Color\Tint($color, $amount) {
+
+    @if $amount > 100 or $amount < 0 {
+
+        @error 'The tint $amount: `#{$amount}` must be between 0 and 100';
+
+    }
+
+    @return mix(white, $color, $amount);
+
+}
+
+
+
+/// @name   Color\Shade
+/// @since  01.29.2020
+/// @param  {Color}  $color
+/// @param  {Number} $amount
+/// @return {Color}  Applies a black shade to the provided color.
+
+@function Color\Shade($color, $amount) {
+
+    @if $amount > 100 or $amount < 0 {
+
+        @error 'The shade $amount: `#{$amount}` must be between 0 and 100';
+
+    }
+
+    @return mix(black, $color, $amount);
+
+}
+
+
+
+/// @name   Color\Blend
+/// @since  01.29.2020
+/// @param  {Color}  $color1
+/// @param  {Color}  $color2
+/// @param  {Number} $amount
+/// @return {Color}  Blends two colors together and returns the mixed value.
+
+@function Color\Blend($color1, $color2, $amount: 50%) {
+
+    @if $amount > 100 or $amount < 0 {
+
+        @error 'The blend $amount: `#{$amount}` must be between 0 and 100';
+
+    }
+
+    @return mix($color1, $color2, $amount);
+
+}
