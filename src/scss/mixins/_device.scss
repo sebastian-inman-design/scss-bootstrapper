@@ -1,0 +1,288 @@
+////
+/// @group  Device
+/// @author Sebastian Inman
+////
+
+
+
+/// @name   Device\Mobile
+/// @since  01.30.2020
+/// @example 
+///     @include Device\Mobile {
+///         @content
+///     }
+
+@mixin Device\Mobile {
+
+  @media only screen and 
+  (min-device-width: 320px) and 
+  (max-device-width: 320px) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\Mobile\Landscape
+/// @since  01.30.2020
+/// @example 
+///     @include Device\Mobile\Landscape {
+///         @content
+///     }
+
+@mixin Device\Mobile\Landscape {
+
+  @media only screen and 
+  (min-width: 321px) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\Mobile\Portrait
+/// @since  01.30.2020
+/// @example 
+///     @include Device\Mobile\Portrait {
+///         @content
+///     }
+
+@mixin Device\Mobile\Portrait {
+
+  @media only screen and 
+  (max-width: 320px) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPad
+/// @since  01.30.2020
+/// @param  $orientation [landscape]
+/// @example 
+///     @include Device\iPad {
+///         @content
+///     }
+
+@mixin Device\iPad($orientation: landscape) {
+
+  @media only screen and 
+  (min-device-width: 768px) and 
+  (max-device-width: 1024px) and 
+  (orientation: $orientation) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPad3
+/// @since  01.30.2020
+/// @param  $orientation [landscape]
+/// @example 
+///     @include Device\iPad3 {
+///         @content
+///     }
+
+@mixin Device\iPad3($orientation: landscape) {
+
+  @media only screen and 
+  (min-device-width: 768px) and 
+  (max-device-width: 1024px) and 
+  (orientation: $orientation) and 
+  (-webkit-min-device-pixel-ratio: 2) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone4
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone4 {
+///         @content
+///     }
+
+@mixin Device\iPhone4($orientation: portrait) {
+
+  @media only screen and 
+  (min-device-width: 320px) and 
+  (max-device-width: 480px) and 
+  (orientation: $orientation) and 
+  (-webkit-min-device-pixel-ratio: 2) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone5
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone5 {
+///         @content
+///     }
+
+@mixin Device\iPhone5($orientation: portrait) {
+
+  @media only screen and 
+  (min-device-width: 320px) and 
+  (max-device-width: 568px) and 
+  (orientation: $orientation) and 
+  (-webkit-min-device-pixel-ratio: 2) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone6
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone6 {
+///         @content
+///     }
+
+@mixin Device\iPhone6($orientation: portrait) {
+
+  @media only screen and 
+  (min-device-width: 375px) and 
+  (max-device-width: 667px) and 
+  (orientation: $orientation) and 
+  (-webkit-min-device-pixel-ratio: 2) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone7
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone7 {
+///         @content
+///     }
+
+@mixin Device\iPhone7($orientation: portrait) {
+
+  @include Device\iPhone6($orientation) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone8
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone8 {
+///         @content
+///     }
+
+@mixin Device\iPhone8($orientation: portrait) {
+
+  @include Device\iPhone6($orientation) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone6Plus
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone6Plus {
+///         @content
+///     }
+
+@mixin Device\iPhone6Plus($orientation: portrait) {
+
+  @media only screen and 
+  (min-device-width: 414px) and 
+  (max-device-width: 736px) and 
+  (orientation: $orientation) and 
+  (-webkit-min-device-pixel-ratio: 2) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone7Plus
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone7Plus {
+///         @content
+///     }
+
+@mixin Device\iPhone7Plus($orientation: portrait) {
+
+  @include Device\iPhone6Plus($orientation) {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Device\iPhone8Plus
+/// @since  01.30.2020
+/// @param  $orientation [portrait]
+/// @example 
+///     @include Device\iPhone8Plus {
+///         @content
+///     }
+
+@mixin Device\iPhone8Plus($orientation: portrait) {
+
+  @include Device\iPhone6Plus($orientation) {
+
+    @content;
+
+  }
+
+}

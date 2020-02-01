@@ -4,26 +4,29 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "sassdoc": "sassdoc src/scss --dest=docs/sass"
+    "sassdoc": "sassdoc src/scss --dest=docs/scss",
+    "styleguide": "kss --config kss.config.json"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "@fullhuman/postcss-purgecss": "^2.0.5",
     "autoprefixer": "^9.7.4",
     "gulp": "^4.0.2",
     "gulp-concat": "^2.6.1",
     "gulp-csso": "^4.0.1",
+    "gulp-group-css-media-queries": "^1.2.2",
     "gulp-postcss": "^8.0.0",
+    "gulp-purgecss": "^2.0.5",
     "gulp-sass": "^4.0.2",
+    "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.5",
+    "kss": "^3.0.0-beta.25",
+    "michelangelo": "^0.8.0",
     "node-sass": "^4.13.1",
     "postcss": "^7.0.26",
     "postcss-custom-properties": "^9.0.2",
     "postcss-import": "^12.0.1",
-    "postcss-nested": "^4.2.1",
-    "sassdoc": "^2.7.1"
+    "postcss-nested": "^4.2.1"
   }
 }

@@ -2,10 +2,9 @@ const { src, dest, watch, series } = require('gulp')
 
 const config = { env: process.env.NODE_ENV || 'development', paths: {} }
 
-config.paths.docs = { scss: 'docs/scss' }
-config.paths.src = { scss: 'src/scss' }
-config.paths.build = { css: 'build/css' }
-config.paths.dist = { css: 'dist/css' }
+config.paths.sass = { src: 'src/scss',  dest: 'src/css' }
+config.paths.css  = { src: 'src/css', dest: 'build/css'  }
+
 
 const tasks = {
 
@@ -45,33 +44,37 @@ const tasks = {
 
     compile: {
 
-        /**
-         * @method compile.scss
-         * @description Compiles SCSS into CSS.
-         */
+      /**
+       * @method compile.scss
+       * @description Compiles SCSS into CSS.
+       */
 
         scss: function() {
 
-            const sass = require('gulp-sass')
-            sass.compiler = require('node-sass')
+          const sass = require('gulp-sass')
+          const glob = require('gulp-sass-glob')
 
-            if(config.env === 'development') {
+          sass.compiler = require('node-sass')
 
-                const sourcemaps = require('gulp-sourcemaps')
+          if(config.env === 'development') {
 
-                return src(`${config.paths.src.scss}/**/*.scss`)
-                    .pipe(sourcemaps.init())
-                    .pipe(sass.sync().on('error', sass.logError))
-                    .pipe(sourcemaps.write('.'))
-                    .pipe(dest(config.paths.build.css))
+            const sourcemaps = require('gulp-sourcemaps')
 
-            }else{
+            return src(`${config.paths.sass.src}/styles.scss`)
+              .pipe(sourcemaps.init())
+              .pipe(glob())
+              .pipe(sass.sync().on('error', sass.logError))
+              .pipe(sourcemaps.write('.'))
+              .pipe(dest(config.paths.css.src))
 
-                return src(`${config.paths.src.scss}/**/*.scss`)
-                    .pipe(sass.sync().on('error', sass.logError))
-                    .pipe(dest(config.paths.build.css))
+          }else{
 
-            }
+            return src(`${config.paths.sass.src}/styles.scss`)
+              .pipe(glob())
+              .pipe(sass.sync().on('error', sass.logError))
+              .pipe(dest(config.paths.css.src))
+
+          }
 
         },
 
@@ -86,47 +89,29 @@ const tasks = {
 
             if(config.env === 'development') {
 
-                return src(`${config.paths.build.css}/*.css`)
+                return src(`${config.paths.css.src}/*.css`)
                     .pipe(postcss())
-                    .pipe(dest(config.paths.dist.css))
+                    .pipe(dest(config.paths.css.dest))
 
             }else{
 
+                const purgecss = require('gulp-purgecss')
+                const mediaqueries = require('gulp-group-css-media-queries')
                 const minifycss = require('gulp-csso')
 
-                return src(`${config.paths.build.css}/*.css`)
-                    .pipe(postcss())
-                    .pipe(minifycss())
-                    .pipe(dest(config.paths.dist.css))
-
-            }
-
-        }
-
-    },
-
-
-    docs: {
-
-        scss: function() {
-
-            if(config.env === 'development') {
-
-                const sassdoc = require('sassdoc')
-
-                return src(`${config.paths.src.scss}/**/*.scss`)
-                    .pipe(sassdoc({
-                        dest: config.paths.docs.scss,
-                        groups: {
-                            functions: 'Functions',
-                            mixins: 'Mixins',
-                            color: 'Color',
-                            string: 'String',
-                            viewport: 'Viewport',
-                            variable: 'Variable',
-                            undefined: 'General'
-                        }
+                return src(`${config.paths.css.src}/*.css`)
+                    .pipe(purgecss({
+                      content: [
+                        '**/*.html', 
+                        '**/*.php', 
+                        '**/*.blade', 
+                        '**/*.vue'
+                      ]
                     }))
+                    .pipe(postcss())
+                    .pipe(mediaqueries())
+                    .pipe(minifycss())
+                    .pipe(dest(config.paths.css.dest))
 
             }
 
@@ -145,16 +130,15 @@ const tasks = {
         watch('postcss.config.js', series(tasks.compile.css))
 
         // Watch SCSS files for changes.
-        watch(`${config.paths.src.scss}/**/*.scss`, series(tasks.compile.scss))
+        watch(`${config.paths.sass.src}/**/*.scss`, series(tasks.compile.scss))
 
         // Watch CSS files for changes.
-        watch(`${config.paths.build.css}/**/*.css`, series(tasks.compile.css))
+        watch(`${config.paths.css.src}/**/*.css`, series(tasks.compile.css))
 
     }
 
 }
 
-exports.docs = series(tasks.env.development, tasks.docs.scss)
 exports.development = exports.dev = exports.watch = series(tasks.env.development, tasks.compile.scss, tasks.compile.css, tasks.watch)
 exports.production = exports.prod = series(tasks.env.production, tasks.compile.scss, tasks.compile.css)
 

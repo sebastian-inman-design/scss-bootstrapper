@@ -1,0 +1,19 @@
+// Button
+//
+// Large, **in charge**, and centered.
+//
+// Markup
+// <button class="button-large">Click Here</button>
+//
+// Styleguide Componenets.button
+
+.button {
+  text-transform: uppercase;
+  border-radius: 4px;
+  font-weight: 500;
+  height: 48px;
+  &-large {
+    @extend .button;
+    height: 60px;
+  }
+}

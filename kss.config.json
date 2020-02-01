@@ -1,0 +1,9 @@
+{
+  "title": "Title of the Style Guide",
+  "source": "src/scss/",
+  "destination": "docs/styleguide/",
+  "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
+  "css": [
+    "../../build/css/styles.css"
+  ]
+}

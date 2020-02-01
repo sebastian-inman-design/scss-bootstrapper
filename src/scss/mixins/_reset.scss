@@ -1,0 +1,60 @@
+////
+/// @group  Reset
+/// @author Sebastian Inman
+////
+
+
+
+/// @name   Reset\Input
+/// @since  01.31.2020
+/// @param {List} $types
+/// @example 
+///     @include Reset\Input {
+///         @content
+///     }
+
+@mixin Reset\Input($types...) {
+
+  $type_selector: '' !default;
+
+  @for $i from 1 through length($types) {
+
+    $type_selector: $type_selector + 'input[type=#{nth($types, $i)}]';
+
+    @if $i < length($types) {
+
+      $type_selector: $type_selector + ',';
+
+    }
+
+  }
+
+  
+
+  #{$type_selector} {
+
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Reset\Textarea
+/// @since  01.31.2020
+/// @example 
+///     @include Reset\Textarea {
+///         @content
+///     }
+
+@mixin Reset\Textarea {
+
+  textarea {
+
+    @extend %reset-field;
+    @content;
+
+  }
+
+}

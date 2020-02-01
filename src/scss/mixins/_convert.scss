@@ -1,0 +1,57 @@
+////
+/// @group  Convert
+/// @author Sebastian Inman
+////
+
+
+@mixin Convert\Pixel-Rem($property, $values...) {
+
+  $pxValues: '';
+  $remValues: '';
+
+  @for $i from 1 through length($values) {
+
+    $value: Helper\StripUnit(nth($values, $i));
+    $base: Helper\StripUnit($Global\BaseFontSize);
+
+    $pxValues: #{$pxValues + $value}px;
+    $remValues: #{$remValues + $value / $base}rem;
+
+    @if $i < length($values) {
+
+      $pxValues: #{$pxValues + ' '};
+      $remValues: #{$remValues + ' '};
+
+    }
+
+  }
+
+  #{$property}: $pxValues;
+  #{$property}: $remValues;
+
+}
+
+
+
+@mixin Convert\Rem-Pixel($property, $values...) {
+
+  $pxValues: '';
+
+  @for $i from 1 through length($values) {
+
+    $value: Helper\StripUnit(nth($values, $i));
+    $base: Helper\StripUnit($Global\BaseFontSize);
+
+    $pxValues: #{$pxValues + $value * $base}px;
+
+    @if $i < length($values) {
+
+      $pxValues: #{$pxValues + ' '};
+
+    }
+
+  }
+
+  #{$property}: $pxValues;
+
+}

@@ -1,58 +1,89 @@
+////
 /// @group  Viewport
-/// @name   Viewport\Min
 /// @author Sebastian Inman
+////
+
+
+
+/// @name   Viewport\Min
 /// @since  01.29.2020
 /// @param  {String} $breakpoint
 /// @output Wraps the content in a min-width media query.
-/// @content
+/// @example 
+///   @include Viewport\Min(800px) {
+///     @content;
+///   }
 
 @mixin Viewport\Min($breakpoint) {
 
-    @media screen and (min-width: $breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
 
-        @content;
-        
-    }
+    @content;
+
+  }
 
 }
 
 
 
-/// @group  Viewport
 /// @name   Viewport\Max
-/// @author Sebastian Inman
 /// @since  01.29.2020
 /// @param  {String} $breakpoint
 /// @output Wraps the content in a max-width media-query.
-/// @content
+/// @example 
+///   @include Viewport\Max(1024px) {
+///     @content;
+///   }
 
 @mixin Viewport\Max($breakpoint) {
 
-    @media screen and (min-width: $breakpoint) {
+  @media only screen and (min-width: $breakpoint) {
 
-        @content;
-        
-    }
+    @content;
+
+  }
 
 }
 
 
 
-/// @group  Viewport
 /// @name   Viewport\Between
-/// @author Sebastian Inman
 /// @since  01.29.2020
 /// @param  {String} $min
 /// @param  {String} $max
 /// @output Wraps the content in a min-width / max-width media query.
-/// @content
+/// @example 
+///   @include Viewport\Between(480px, 720px) {
+///     @content;
+///   }
 
 @mixin Viewport\Between($min, $max) {
 
-    @media screen and (min-width: $min) and (max-width: $max) {
+  @media only screen and (min-width: $min) and (max-width: $max) {
 
-        @content;
-        
-    }
+    @content;
+
+  }
+
+}
+
+
+
+/// @name   Viewport\Orientation
+/// @since  01.31.2020
+/// @param  {String} $orientation [landscape]
+/// @output Wraps the content in a min-width / max-width media query.
+/// @example 
+///   @include Viewport\Orientation(portrait) {
+///     @content;
+///   }
+
+@mixin Viewport\Orientation($orientation: landscape) {
+
+  @media only screen and (orientation: $orientation) {
+
+    @content;
+
+  }
 
 }

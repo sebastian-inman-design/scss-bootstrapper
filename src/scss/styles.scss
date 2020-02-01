@@ -2,21 +2,57 @@
 /// Notes here about how and why to use this new SCSS system.
 /// @link http://sassdoc.com/annotations/
 
-@import 'functions/color';
 
-@import 'mixins/viewport';
+// Variables
+//
+// Styleguide Variables
+@import 'variables/*.scss';
 
-@include root-variables;
+
+// Functions
+//
+// Styleguide Functions
+@import 'functions/*.scss';
 
 
-body {
-    color: Color\Tint(red, 50);
+// Mixins
+//
+// Styleguide Mixins
+@import 'mixins/*.scss';
+
+
+// Extends
+//
+// Styleguide Extends
+@import 'extends/*.scss';
+
+
+// Components
+//
+// Styleguide Components
+@import 'components/*.scss';
+
+
+p {
+
+  @include Convert\Pixel-Rem(font-size, 12px);
+
+  @include Viewport\Min(500px) {
+
+    @include Convert\Pixel-Rem(font-size, 14px);
+
+  }
+
 }
 
-@include Viewport\Min(300px) {
+h1 {
 
-    body {
-        color: Color\Tint(blue, 50);
-    }
+  @include Convert\Pixel-Rem(font-size, 32px);
+
+  @include Viewport\Min(500px) {
+
+    @include Convert\Pixel-Rem(font-size, 28px);
+
+  }
 
 }

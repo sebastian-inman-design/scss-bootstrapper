@@ -1,5 +1,5 @@
 ////
-/// @group String
+/// @group  String
 /// @author Sebastian Inman
 ////
 
@@ -14,15 +14,15 @@
 
 @function String\Replace($string, $search, $replace: '') {
 
-    $index: str-index($string, $search);
+  $index: str-index($string, $search);
 
-    @if $index {
+  @if $index {
 
-        @return str-slice($string, 1, $index - 1) + $replace + String\Replace(str-slice($string, $index + str-length($search)), $search, $replace);
+    @return str-slice($string, 1, $index - 1) + $replace + String\Replace(str-slice($string, $index + str-length($search)), $search, $replace);
 
-    }
+  }
 
-    @return $string;
+  @return $string;
 
 }
 
@@ -35,50 +35,51 @@
 
 @function String\Explode($string, $delimiter: '') {
 
-    @if type-of($string) != 'string' {
+  @if type-of($string) != 'string' {
 
-        @error 'The argument $string: `#{$string}` is of incorrect type: `#{type-of($string)}`. Type of `String` is required.';
+    @error 'The argument $string: `#{$string}` is of incorrect type: `#{type-of($string)}`. Type of `String` is required.';
 
-    }
+  }
 
-    @if type-of($delimiter) != 'string' {
+  @if type-of($delimiter) != 'string' {
 
-        @error 'The argument $delimiter: `#{$delimiter}` is of incorrect type: `#{type-of($delimiter)}`. Type of `String` is required.';
+    @error 'The argument $delimiter: `#{$delimiter}` is of incorrect type: `#{type-of($delimiter)}`. Type of `String` is required.';
 
-    }
+  }
 
-    $result: ();
-    $running: true;
+  $result: ();
+  $running: true;
 
-    @if str-length($delimiter) == 0 {
+  @if str-length($delimiter) == 0 {
 
-        @for $i from 1 through str-length($string) {
+    @for $i from 1 through str-length($string) {
 
-            $result: append($result, str-slice($string, $i, $i));
-
-        }
-
-        @return $result;
-    }
-
-    @while $running {
-
-        $index: str-index($string, $delimiter);
-
-        @if $index != null {
-
-            $item: str-slice($string, 1, ($index - 1));
-            $result: append($result, $item);
-            $string: str-slice($string, ($index + str-length($delimiter)));
-
-        } @else {
-
-            $running: false;
-
-        }
+      $result: append($result, str-slice($string, $i, $i));
 
     }
 
-    @return append($result, $string);
+    @return $result;
+
+  }
+
+  @while $running {
+
+    $index: str-index($string, $delimiter);
+
+    @if $index != null {
+
+      $item: str-slice($string, 1, ($index - 1));
+      $result: append($result, $item);
+      $string: str-slice($string, ($index + str-length($delimiter)));
+
+    } @else {
+
+      $running: false;
+
+    }
+
+  }
+
+  @return append($result, $string);
 
 }

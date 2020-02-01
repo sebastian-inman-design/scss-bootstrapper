@@ -1,0 +1,60 @@
+////
+/// @group  Log
+/// @author Sebastian Inman
+////
+
+
+
+/// @name   Log\Error
+/// @since  01.31.2020
+/// @param  {String} $message
+/// @return {String} Prints the error message to the terminal.
+
+@function Log\Error($message) {
+
+  @if $Settings\LogErrors {
+
+    @error $message;
+
+  }
+
+}
+
+
+
+/// @name   Log\Warn
+/// @since  01.31.2020
+/// @param  {String} $message
+/// @return {String} Prints the warning message to the terminal.
+
+@function Log\Warn($message) {
+
+  @warn $message;
+
+}
+
+
+
+/// @name   Log\Debug
+/// @since  01.31.2020
+/// @param  {String} $message
+/// @return {String} Prints the message to the terminal.
+
+@function Log\Debug($message) {
+
+  @debug $message;
+
+}
+
+
+
+/// @name   Log\Print
+/// @since  01.31.2020
+/// @param  {String} $message
+/// @return {String} Prints the message to the terminal.
+
+@function Log\Print($message) {
+
+  @return Log\Debug($message);
+
+}

@@ -1,0 +1,66 @@
+%reset-appearance {
+
+  appearance: none;
+
+}
+
+%reset-border-radius {
+
+  border-radius: none;
+
+}
+
+%reset-border {
+
+  border: none;
+
+}
+
+%reset-outline {
+
+  outline: none;
+
+}
+
+%reset-cursor {
+
+  cursor: initial;
+
+}
+
+%reset-padding {
+
+  padding: 0;
+
+}
+
+%reset-margin {
+
+  margin: 0;
+
+}
+
+
+%reset-field,
+%reset-textarea {
+
+  @extend %reset-border-radius;
+  @extend %reset-appearance;
+  @extend %reset-padding;
+  @extend %reset-outline;
+  @extend %reset-cursor;
+  @extend %reset-border;
+
+  max-width: 100%;
+
+}
+
+
+%reset-checkbox {
+
+  @extend %reset-appearance;
+  @extend %reset-outline;
+
+  cursor: pointer;
+
+}
