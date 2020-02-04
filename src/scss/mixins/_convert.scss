@@ -1,8 +1,21 @@
-////
-/// @group  Convert
-/// @author Sebastian Inman
-////
+// Convert
+//
+// Sass mixins that convert properties and values from one form to another.
+//
+// Style guide: Mixins.Convert
 
+
+
+// Convert\Pixel-Rem
+//
+// Converts pixel values into rem values.
+//
+// @include Convert\Pixel-Rem(width, 100px);
+//
+// $property  - The property being converted to rems.
+// $values... - The pixel values being converted to rems.
+//
+// Style guide: Mixins.Convert.Pixel-Rem
 
 @mixin Convert\Pixel-Rem($property, $values...) {
 
@@ -12,7 +25,7 @@
   @for $i from 1 through length($values) {
 
     $value: Helper\StripUnit(nth($values, $i));
-    $base: Helper\StripUnit($Global\BaseFontSize);
+    $base: Helper\StripUnit($Base\Font\Size);
 
     $pxValues: #{$pxValues + $value}px;
     $remValues: #{$remValues + $value / $base}rem;
@@ -40,7 +53,7 @@
   @for $i from 1 through length($values) {
 
     $value: Helper\StripUnit(nth($values, $i));
-    $base: Helper\StripUnit($Global\BaseFontSize);
+    $base: Helper\StripUnit($Base\Font\Size);
 
     $pxValues: #{$pxValues + $value * $base}px;
 

@@ -1,9 +1,16 @@
-////
-/// @group  Helper
-/// @author Sebastian Inman
-////
+// Helper
+//
+// Style guide: Functions.Helper
 
 
+
+// Helper\StripUnit
+//
+// Strips the unit off the number and returns the number.
+//
+// $number - The number we're stripping the unit from.
+//
+// Style guide: Functions.Helper.StripUnit
 
 @function Helper\StripUnit($number) {
 
@@ -12,6 +19,15 @@
 }
 
 
+
+// Helper\Rem
+//
+// Strips the unit off the number and returns the number.
+//
+// $size - The number we're stripping the unit from.
+// $base - The base number of pixels each Rem is equal to (16px).
+//
+// Style guide: Functions.Helper.Rem
 
 @function Helper\Rem($size, $base: 16px) {
 

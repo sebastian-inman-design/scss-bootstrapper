@@ -3,56 +3,36 @@
 /// @link http://sassdoc.com/annotations/
 
 
+
 // Variables
 //
-// Styleguide Variables
+// Style guide: Variables
 @import 'variables/*.scss';
+
 
 
 // Functions
 //
-// Styleguide Functions
+// Style guide: Functions
 @import 'functions/*.scss';
+
 
 
 // Mixins
 //
-// Styleguide Mixins
+// Style guide: Mixins
 @import 'mixins/*.scss';
+
 
 
 // Extends
 //
-// Styleguide Extends
+// Style guide: Extends
 @import 'extends/*.scss';
+
 
 
 // Components
 //
-// Styleguide Components
+// Style guide: Components
 @import 'components/*.scss';
-
-
-p {
-
-  @include Convert\Pixel-Rem(font-size, 12px);
-
-  @include Viewport\Min(500px) {
-
-    @include Convert\Pixel-Rem(font-size, 14px);
-
-  }
-
-}
-
-h1 {
-
-  @include Convert\Pixel-Rem(font-size, 32px);
-
-  @include Viewport\Min(500px) {
-
-    @include Convert\Pixel-Rem(font-size, 28px);
-
-  }
-
-}

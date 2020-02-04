@@ -1,18 +1,23 @@
-// Button
+// Buttons
 //
-// Large, **in charge**, and centered.
+// A clicky button for clicking!
 //
-// Markup
-// <button class="button-large">Click Here</button>
+// :hover - Highlights when hovering.
+// .large - BIG BUTTON.
+// .primary - The primary button state.
 //
-// Styleguide Componenets.button
+// Markup:
+// <a href="#" class="button">Link</a>
+// <button class="button">Button</button>
+//
+// Styleguide Components.Buttons
 
 .button {
   text-transform: uppercase;
   border-radius: 4px;
   font-weight: 500;
   height: 48px;
-  &-large {
+  &.large {
     @extend .button;
     height: 60px;
   }

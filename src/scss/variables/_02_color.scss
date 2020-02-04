@@ -1,0 +1,70 @@
+// Color
+//
+// Weight: -3
+//
+// Style guide: Variables.Color
+
+
+
+// Default Colors
+//
+// A collection of default colors.
+//
+// $Color\Default\White - #FFFFFF; White
+// $Color\Default\Black - #000000; Black
+//
+// Style guide: Variables.Color.Default
+
+$Color\Default\White: #FFFFFF !default;
+$Color\Default\Black: #000000 !default;
+
+
+
+// Cerakote Brand Colors
+//
+// A collection of branding colors for Cerakote.
+//
+// $Color\Cerakote\Orange - #F78F1B; Cerakote Orange
+// $Color\Cerakote\Gray -   #3A3A39; Cerakote Gray
+// $Color\Cerakote\Blue -   #1788E4; Cerakote Blue
+//
+// Style guide: Variables.Color.Cerakote
+
+$Color\Cerakote\Orange: #F78F1B !default;
+$Color\Cerakote\Gray:   #3A3A39 !default;
+$Color\Cerakote\Blue:   #1788E4 !default;
+
+
+
+// Social Media Colors
+//
+// A collection of branding colors from popular social media websites.<br>
+// <a href="https://www.lockedownseo.com/social-media-colors/">https://www.lockedownseo.com/social-media-colors/</a>
+//
+// $Color\Social\LinkedIn  - #007BB5; LinkedIn
+// $Color\Social\Facebook  - #1877F2; Facebook
+// $Color\Social\Twitter   - #1DA1F2; Twitter
+// $Color\Social\Instagram - #C32AA3; Instagram
+// $Color\Social\Pinterest - #BD081C; Pinterest
+// $Color\Social\Amazon    - #FF9900; Amazon
+//
+// Style guide: Variables.Color.Social
+
+$Color\Social\LinkedIn:  #007BB5 !default;
+$Color\Social\Facebook:  #1877F2 !default;
+$Color\Social\Twitter:   #1DA1F2 !default;
+$Color\Social\Instagram: #C32AA3 !default;
+$Color\Social\Pinterest: #BD081C !default;
+$Color\Social\Amazon:    #FF9900 !default;
+
+
+
+// Background Colors
+//
+// $Color\Background\Body -   #E6E8E8; Body Background
+// $Color\Background\Header - #3A3A39; Header Background
+//
+// Style guide: Variables.Color.Background
+
+$Color\Background\Body:   #E6E8E8 !default;
+$Color\Background\Header: #3A3A39 !default;

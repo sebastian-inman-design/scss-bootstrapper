@@ -1,7 +1,16 @@
-/// @name   Color\RGB
-/// @since  01.29.2020
-/// @param  {Color} $color
-/// @return {Color} Returns the provided color in RGB format.
+// Color
+//
+// Style guide: Functions.Color
+
+
+
+// Color\RGB
+//
+// Converts the provided color into RGB format.
+//
+// $color - The color being converted to RGB format.
+//
+// Style guide: Functions.Color.RGB
 
 @function Color\RGB($color) {
 
@@ -11,11 +20,14 @@
 
 
 
-/// @name   Color\RGBA
-/// @since  01.29.2020
-/// @param  {Color}  $color
-/// @param  {Number} $alpha 
-/// @return {Color}  Returns the provided color in RGBA format.
+// Color\RGBA
+//
+// Converts the provided color into RGBA format.
+//
+// $color - The color being converted to RGBA format.
+// $alpha - The alpha value of the converted color.
+//
+// Style guide: Functions.Color.RGBA
 
 @function Color\RGBA($color, $alpha: 1) {
 
@@ -31,11 +43,17 @@
 
 
 
-/// @name   Color\Tint
-/// @since  01.29.2020
-/// @param  {Color}  $color
-/// @param  {Number} $amount
-/// @return {Color}  Applies a white tint to the provided color.
+// Color\Tint
+//
+// Applies a white tint to the provided color.
+//
+// $color - The color being tinted.
+// $amount - How much tint to apply to the color (0 - 100).
+//
+// Markup:
+// h1 { color: Color\Tint(red, 50); }
+//
+// Style guide: Functions.Color.Tint
 
 @function Color\Tint($color, $amount) {
 
@@ -51,11 +69,17 @@
 
 
 
-/// @name   Color\Shade
-/// @since  01.29.2020
-/// @param  {Color}  $color
-/// @param  {Number} $amount
-/// @return {Color}  Applies a black shade to the provided color.
+// Color\Shade
+//
+// Applies a black shade to the provided color.
+//
+// $color - The color being shaded.
+// $amount - How much shade to apply to the color (0 - 100).
+//
+// Markup:
+// h1 { color: Color\Shade(red, 50); }
+//
+// Style guide: Functions.Color.Shade
 
 @function Color\Shade($color, $amount) {
 
@@ -71,12 +95,18 @@
 
 
 
-/// @name   Color\Blend
-/// @since  01.29.2020
-/// @param  {Color}  $color1
-/// @param  {Color}  $color2
-/// @param  {Number} $amount
-/// @return {Color}  Blends two colors together and returns the mixed value.
+// Color\Blend
+//
+// Blends two colors together and returns the mixed value.
+//
+// $color1 - The first color being blended.
+// $color2 - The second color being blended.
+// $amount - How much to blend the two colors (0 - 100).
+//
+// Markup:
+// div { background-color: Color\Blend(red, blue, 50%); }
+//
+// Style guide: Functions.Color.Blend
 
 @function Color\Blend($color1, $color2, $amount: 50%) {
 
@@ -92,18 +122,16 @@
 
 
 
-/// @name Color\Offset
-/// @since 01.31.2020
-/// @param {Color} $background
-/// @param {Color} $color1
-/// @param {Color} $color2
-/// @param {Number} $offset
-/// @return {Color} Returns one of two colors based on the lightness of the background.
-/// @example
-///   div {
-///     background-color: gray;
-///     color: Color\Offset(gray, white, black);
-///   }
+// Color\Offset
+//
+// Blends two colors together and returns the mixed value.
+//
+// $background - The background color.
+// $color1 - The first color being blended.
+// $color2 - The second color being blended.
+// $offset - How much to blend the two colors (0 - 100).
+//
+// Style guide: Functions.Color.Offset
 
 @function Color\Offset($background, $color1: #FFFFFF, $color2: #000000, $offset: 50) {
 

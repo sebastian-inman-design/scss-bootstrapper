@@ -1,0 +1,27 @@
+// Font
+//
+// Weight: -2
+//
+// Style guide: Variables.Font
+
+
+
+// Font Families
+//
+// $Font\Family\Arial - Arial, sans-serif
+// $Font\Family\OpenSans - Open Sans, sans-serif
+//
+// Style guide: Variables.Font.Family
+
+$Font\Family\Arial:    'Arial', sans-serif;
+$Font\Family\OpenSans: 'Open Sans', sans-serif;
+
+
+
+// Font Sizes
+//
+// $Font\Size\H1 - 36px
+//
+// Style guide: Variables.Font.Size
+
+$Font\Size\H1: Convert\Pixel-Rem(36px);

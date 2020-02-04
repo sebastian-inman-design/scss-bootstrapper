@@ -1,0 +1,21 @@
+// Settings
+//
+// Weight: -4
+//
+// Global SCSS settings.
+//
+// Style guide: Variables.Settings
+
+
+
+// Log Settings
+//
+// Terminal log settings.
+//
+// $Settings\Log\Errors - When set to `true` Scss mixin and function errors will print to the terminal.
+// $Settings\Log\Warnings - When set to `true` Scss mixin and function warnings will print to the terminal.
+//
+// Style guide: Variables.Settings.Logs
+
+$Settings\Log\Errors:   true;
+$Settings\Log\Warnings: true;

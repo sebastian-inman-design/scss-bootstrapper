@@ -1,16 +1,17 @@
-////
-/// @group  String
-/// @author Sebastian Inman
-////
+// String
+//
+// Style guide: Functions.String
 
 
-
-/// @name   String\Replace
-/// @since  01.29.2020
-/// @param  {String} $string
-/// @param  {String} $search
-/// @param  {String} $replace
-/// @return {String | Color} Searches a string for a substring and removes it. 
+// String\Replace
+//
+// Searches a string for a substring and replaces it.
+//
+// $string - The string we will be modifying.
+// $search - The string we are searching for.
+// $replace - What we will be replacing the unwanted string with.
+//
+// Style guide: Functions.String.Replace
 
 @function String\Replace($string, $search, $replace: '') {
 
@@ -28,10 +29,14 @@
 
 
 
-/// @name   String\Explode
-/// @since  01.29.2020 
-/// @param  {String} $string
-/// @param  {String} $delimiter
+// String\Explode
+//
+// Splits a string into a list.
+//
+// $string - The string we will be modifying.
+// $delimiter - The string we are searching for.
+//
+// Style guide: Functions.String.Explode
 
 @function String\Explode($string, $delimiter: '') {
 

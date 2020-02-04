@@ -3,6 +3,8 @@ build/
 dist/
 docs/
 
+src/css/
+
 node_modules/
 package-lock.json
 *.code-workspace

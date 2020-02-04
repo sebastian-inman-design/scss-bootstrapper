@@ -1,14 +1,16 @@
-////
-/// @group  Log
-/// @author Sebastian Inman
-////
+// Log
+//
+// Style guide: Functions.Log
 
 
 
-/// @name   Log\Error
-/// @since  01.31.2020
-/// @param  {String} $message
-/// @return {String} Prints the error message to the terminal.
+// Log\Error
+//
+// Prints the error message to the terminal.
+//
+// $message - The error message being printed to the terminal.
+//
+// Style guide: Functions.Log.Error
 
 @function Log\Error($message) {
 
@@ -22,10 +24,13 @@
 
 
 
-/// @name   Log\Warn
-/// @since  01.31.2020
-/// @param  {String} $message
-/// @return {String} Prints the warning message to the terminal.
+// Log\Warn
+//
+// Prints the warning message to the terminal.
+//
+// $message - The warning message being printed to the terminal.
+//
+// Style guide: Functions.Log.Warn
 
 @function Log\Warn($message) {
 
@@ -35,10 +40,13 @@
 
 
 
-/// @name   Log\Debug
-/// @since  01.31.2020
-/// @param  {String} $message
-/// @return {String} Prints the message to the terminal.
+// Log\Debug
+//
+// Prints the message to the terminal.
+//
+// $message - The message being printed to the terminal.
+//
+// Style guide: Functions.Log.Debug
 
 @function Log\Debug($message) {
 
@@ -48,10 +56,13 @@
 
 
 
-/// @name   Log\Print
-/// @since  01.31.2020
-/// @param  {String} $message
-/// @return {String} Prints the message to the terminal.
+// Log\Print
+//
+// Prints the message to the terminal.
+//
+// $message - The message being printed to the terminal.
+//
+// Style guide: Functions.Log.Print
 
 @function Log\Print($message) {
 

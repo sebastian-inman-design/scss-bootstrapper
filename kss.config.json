@@ -1,9 +1,10 @@
 {
-  "title": "Title of the Style Guide",
+  "title": "Cerakote Web Styleguide",
+  "mask": "*.scss",
+  "placeholder": "[modifier]",
+  "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
   "source": "src/scss/",
   "destination": "docs/styleguide/",
-  "builder": "node_modules/michelangelo/kss_styleguide/custom-template/",
-  "css": [
-    "../../build/css/styles.css"
-  ]
+  "css": ["../../build/css/styles.css"],
+  "js": []
 }

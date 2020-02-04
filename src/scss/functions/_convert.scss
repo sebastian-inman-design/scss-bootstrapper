@@ -1,0 +1,37 @@
+// Convert
+//
+// Style guide: Functions.Convert
+
+
+
+// Convert\Pixel-Rem
+//
+// Converts pixel values into rem values.
+//
+// $property  - The property being converted to rems.
+// $values... - The pixel values being converted to rems.
+//
+// Style guide: Functions.Convert.Pixel-Rem
+
+@function Convert\Pixel-Rem($property, $values...) {
+
+  $remValues: '';
+
+  @for $i from 1 through length($values) {
+
+    $value: Helper\StripUnit(nth($values, $i));
+    $base: Helper\StripUnit($Base\Font\Size);
+
+    $remValues: #{$remValues + $value / $base}rem;
+
+    @if $i < length($values) {
+
+      $remValues: #{$remValues + ' '};
+
+    }
+
+  }
+
+  @return $remValues;
+
+}

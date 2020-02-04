@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "sassdoc": "sassdoc src/scss --dest=docs/scss",
-    "styleguide": "kss --config kss.config.json"
+    "styleguide": "kss --config kss.config.json --verbose"
   },
   "keywords": [],
   "author": "",

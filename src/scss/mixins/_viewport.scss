@@ -1,18 +1,19 @@
-////
-/// @group  Viewport
-/// @author Sebastian Inman
-////
+// Viewport
+//
+// Style guide: Mixins.Viewport
 
 
 
-/// @name   Viewport\Min
-/// @since  01.29.2020
-/// @param  {String} $breakpoint
-/// @output Wraps the content in a min-width media query.
-/// @example 
-///   @include Viewport\Min(800px) {
-///     @content;
-///   }
+// Viewport\Min
+//
+// Wraps the content in a min-width media query.
+//
+// Markup:
+// @include Viewport\Min(800px) { @content; }
+//
+// $breakpoint - The minimum viewport size in pixels.
+//
+// Style guide: Mixins.Viewport.Min
 
 @mixin Viewport\Min($breakpoint) {
 
@@ -26,14 +27,16 @@
 
 
 
-/// @name   Viewport\Max
-/// @since  01.29.2020
-/// @param  {String} $breakpoint
-/// @output Wraps the content in a max-width media-query.
-/// @example 
-///   @include Viewport\Max(1024px) {
-///     @content;
-///   }
+// Viewport\Max
+//
+// Wraps the content in a max-width media query.
+//
+// Markup:
+// @include Viewport\Max(1024px) { @content; }
+//
+// $breakpoint - The maximum viewport size in pixels.
+//
+// Style guide: Mixins.Viewport.Max
 
 @mixin Viewport\Max($breakpoint) {
 
@@ -47,15 +50,17 @@
 
 
 
-/// @name   Viewport\Between
-/// @since  01.29.2020
-/// @param  {String} $min
-/// @param  {String} $max
-/// @output Wraps the content in a min-width / max-width media query.
-/// @example 
-///   @include Viewport\Between(480px, 720px) {
-///     @content;
-///   }
+// Viewport\Between
+//
+// Wraps the content in a min-width / max-width media query.
+//
+// Markup:
+// @include Viewport\Between(400px, 1024px) { @content; }
+//
+// $min - The minimum width of the viewport.
+// $max - The maximum width of the viewport.
+//
+// Style guide: Mixins.Viewport.Between
 
 @mixin Viewport\Between($min, $max) {
 
@@ -69,14 +74,16 @@
 
 
 
-/// @name   Viewport\Orientation
-/// @since  01.31.2020
-/// @param  {String} $orientation [landscape]
-/// @output Wraps the content in a min-width / max-width media query.
-/// @example 
-///   @include Viewport\Orientation(portrait) {
-///     @content;
-///   }
+// Viewport\Orientation
+//
+// Wraps the content in a min-width media query.
+//
+// Markup:
+// @include Viewport\Orientation(portrait) { @content; }
+//
+// $orientation - The orientation of the device [portrait/landscape].
+//
+// Style guide: Mixins.Viewport.Orientation
 
 @mixin Viewport\Orientation($orientation: landscape) {
 
